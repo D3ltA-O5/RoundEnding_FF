@@ -2,9 +2,8 @@
 using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs;
-using MEC;
-using System.Collections.Generic;
 using Exiled.Events.EventArgs.Server;
+using MEC;
 
 namespace RoundEndingFF
 {
@@ -14,8 +13,6 @@ namespace RoundEndingFF
         public override string Author => "D3ltA_O5";
         public override Version Version => new Version(1, 0, 0);
         public override Version RequiredExiledVersion => new Version(8, 11, 0);
-
-        private CoroutineHandle _roundEndHandle;
 
         public override void OnEnabled()
         {
@@ -34,19 +31,19 @@ namespace RoundEndingFF
 
         private void OnRoundEnded(RoundEndedEventArgs ev)
         {
-            // Активируем friendly fire
+            // Enable friendly fire
             Server.FriendlyFire = true;
 
-            // Формируем сообщение с цветом
+            // Create colored message
             string coloredMessage = $"<color={Config.BroadcastColor}>{Config.BroadcastMessage}</color>";
 
-            // Показываем сообщение всем игрокам
+            // Show message to all players
             Map.Broadcast(Config.BroadcastDuration, coloredMessage);
 
-            // Задерживаем конец раунда
-            _roundEndHandle = Timing.CallDelayed(Config.RoundEndDelay, () =>
+            // Restart server after a brief moment
+            Timing.CallDelayed(5f, () =>
             {
-                // Деактивируем friendly fire
+                // Disable friendly fire before restarting
                 Server.FriendlyFire = false;
                 Server.Restart();
             });
