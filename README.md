@@ -39,10 +39,6 @@ After installing and configuring the plugin, it will automatically activate frie
 
 We welcome contributions from the community! If you have suggestions or improvements, feel free to fork the repository and submit a pull request.
 
-## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/D3ltA-O5/RoundEnding_FF/LICENSE) file for more details.
-
 ## 🛠️ Support
 
 For support, questions, or to report bugs, please visit the [GitHub Issues page](https://github.com/D3ltA-O5/RoundEnding_FF/issues) or DM me in discord my ds: cyberco.
