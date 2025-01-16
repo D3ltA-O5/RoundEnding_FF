@@ -5,19 +5,20 @@ namespace RoundEndingFF
 {
     public class Config : IConfig
     {
-        [Description("Is the plugin enabled.")]
+        [Description("Включён ли плагин.")]
         public bool IsEnabled { get; set; } = true;
 
-        [Description("Message displayed to all players when friendly fire is enabled.")]
-        public string BroadcastMessage { get; set; } = "Friendly fire is now enabled! Have fun for the last seconds!";
-
-        [Description("Duration of the broadcast message (in seconds).")]
-        public ushort BroadcastDuration { get; set; } = 10;
-
-        [Description("Enable debug mode.")]
+        [Description("Включить режим отладки (вывод подробных логов).")]
         public bool Debug { get; set; } = false;
 
-        [Description("Text color for the broadcast message.")]
+        [Description("Сообщение, которое увидят все игроки при включении FriendlyFire.")]
+        public string BroadcastMessage { get; set; } =
+            "Friendly fire is now enabled! Have fun for the last seconds!";
+
+        [Description("Продолжительность широковещательного сообщения (в секундах).")]
+        public ushort BroadcastDuration { get; set; } = 10;
+
+        [Description("Цвет текста в широковещательном сообщении.")]
         public string BroadcastColor { get; set; } = "red";
     }
 }
