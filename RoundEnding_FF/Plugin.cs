@@ -26,10 +26,6 @@ namespace RoundEndingFF
 
         public override void OnDisabled()
         {
-            // If the plugin is disabled, ensure to unsubscribe from events
-            if (!Config.IsEnabled)
-                return;
-
             // Unsubscribe from server events
             Exiled.Events.Handlers.Server.EndingRound -= OnEndingRound;
             Exiled.Events.Handlers.Server.RoundEnded -= OnRoundEnded;
